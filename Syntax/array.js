@@ -49,3 +49,9 @@ console.log(pop);
 var shift = arr.shift();
 console.log(arr);
 console.log(shift);
+
+//La fonction splice
+var mois = ["Janvier", "Mars", "Avril","Mai"];
+mois.splice(1,0,"Févirer");
+console.log(mois)
+mois.splice(4,-1,"Mai")
