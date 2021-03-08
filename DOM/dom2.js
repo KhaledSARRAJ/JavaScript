@@ -1,36 +1,34 @@
-//Modifier des attributs
+//MODIFIER LES ATTRIBUTS D'UN ELEMENT DU DOM
+
 const lien = document.getElementsByTagName("a")[0];
 console.log(lien.getAttribute("href"));
-lien.setAttribute("href", "http://ecoleql.fr");
+lien.setAttribute("href", "http://google.fr");
 console.log(lien.getAttribute("href"));
 
-// Modifier le style CSS d'un élément
+//CHANGER UNE LISTE d'ELEMENTS EN ARRAY
+const texte = document.getElementsByTagName("p");
+console.log(texte);
+const texteArray = Array.from(texte);
+console.log(texteArray);
+texteArray.map(para => para.innerHTML = "Tu es dans la matrice");
+
+///Modifier le style css d'un élément
+
 const titre = document.getElementById("titre");
-console.log(titre);
 titre.style.color = "hotpink";
 titre.style.fontFamily = "Arial";
-titre.style.boxShadow ="2px 2px 10 px rgba(0,0,0,0.3)";
 
-//Changer une HTMLCollection en Array
-const textes = document.body.getElementsByTagName("p");
-console.log(textes);
-const arrayTextes =  Array.from(textes);
-console.log(arrayTextes);
-arrayTextes.map(paragraphe => paragraphe.innerHTML ="Tu es dans la matrice");
+//Une autre façon plus pratique pour récupérer des éléments du DOM
+//querySelector
+//classe .classe
+//id #id
+//const leTitre = document.querySelector("h1");
+const leTitre = document.querySelector("#titre");
+console.log(leTitre);
 
-//Trouver la taille dun élément 
-console.log(titre.offsetHeight, titre.offsetWidth);
-console.log(titre.clientHeight, titre.clientWidth);
-
-//Une autre façon de sélectionner des éléments du DOM
-//QuerySelector
-
-const para = document.querySelector(".para");
-console.log(para)
+const paragraphes = document.querySelectorAll(".para");
+console.log(paragraphes);
+const paraArray = Array.from(paragraphes);
+paraArray.map(paragraphe => paragraphe.style.color = "teal");
 
 
-const paras = document.querySelectorAll(".para");
-console.log(paras);
-
-const arrayParas = Array.from(paras);
-console.log(arrayParas);
